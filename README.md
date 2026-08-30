@@ -1,14 +1,14 @@
 <div class="filament-hidden">
 
-![Filament Testimonial](https://raw.githubusercontent.com/jeffersongoncalves/filament-testimonial/3.x/art/jeffersongoncalves-filament-testimonial.png)
+![Filament Testimonial](https://raw.githubusercontent.com/jeffersongoncalves/filament-testimonial/2.x/art/jeffersongoncalves-filament-testimonial.png)
 
 </div>
 
 # Filament Testimonial
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jeffersongoncalves/filament-testimonial.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-testimonial)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-testimonial/tests.yml?branch=3.x&label=tests&style=flat-square)](https://github.com/jeffersongoncalves/filament-testimonial/actions?query=workflow%3Atests+branch%3A3.x)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-testimonial/pint.yml?branch=3.x&label=code%20style&style=flat-square)](https://github.com/jeffersongoncalves/filament-testimonial/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3A3.x)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-testimonial/tests.yml?branch=2.x&label=tests&style=flat-square)](https://github.com/jeffersongoncalves/filament-testimonial/actions?query=workflow%3Atests+branch%3A2.x)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-testimonial/pint.yml?branch=2.x&label=code%20style&style=flat-square)](https://github.com/jeffersongoncalves/filament-testimonial/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3A2.x)
 [![Total Downloads](https://img.shields.io/packagist/dt/jeffersongoncalves/filament-testimonial.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-testimonial)
 [![License](https://img.shields.io/packagist/l/jeffersongoncalves/filament-testimonial.svg?style=flat-square)](LICENSE)
 
@@ -27,7 +27,7 @@ Filament admin UI (CRUD) for [`jeffersongoncalves/laravel-testimonial`](https://
 You can install the package via composer:
 
 ```bash
-composer require jeffersongoncalves/filament-testimonial:"^3.0"
+composer require jeffersongoncalves/filament-testimonial:"^2.0"
 ```
 
 Register the plugin in your panel provider:
