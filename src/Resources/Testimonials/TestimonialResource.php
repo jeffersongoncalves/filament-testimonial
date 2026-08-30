@@ -2,10 +2,8 @@
 
 namespace JeffersonGoncalves\FilamentTestimonial\Resources\Testimonials;
 
-use BackedEnum;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use JeffersonGoncalves\FilamentTestimonial\FilamentTestimonialPlugin;
 use JeffersonGoncalves\FilamentTestimonial\Resources\Testimonials\Pages\CreateTestimonial;
@@ -21,7 +19,7 @@ class TestimonialResource extends Resource
 {
     use Translatable;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedChatBubbleBottomCenterText;
+    protected static ?string $navigationIcon = 'heroicon-o-chat-bubble-bottom-center-text';
 
     protected static ?int $navigationSort = 2;
 
@@ -51,9 +49,9 @@ class TestimonialResource extends Resource
         return __('filament-testimonial::testimonial.item.plural_label');
     }
 
-    public static function form(Schema $schema): Schema
+    public static function form(Form $form): Form
     {
-        return TestimonialForm::configure($schema);
+        return TestimonialForm::configure($form);
     }
 
     public static function table(Table $table): Table

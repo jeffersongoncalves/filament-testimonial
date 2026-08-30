@@ -2,7 +2,7 @@
 
 namespace JeffersonGoncalves\FilamentTestimonial\Resources\Testimonials\Tables;
 
-use Filament\Actions;
+use Filament\Tables\Actions;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
@@ -41,11 +41,11 @@ class TestimonialsTable
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->defaultSort('order')
-            ->recordActions([
+            ->actions([
                 Actions\EditAction::make(),
                 Actions\DeleteAction::make(),
             ])
-            ->toolbarActions([
+            ->bulkActions([
                 Actions\BulkActionGroup::make([
                     Actions\DeleteBulkAction::make(),
                 ]),

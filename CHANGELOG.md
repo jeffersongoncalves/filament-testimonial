@@ -9,8 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- `FilamentTestimonialPlugin` with `TestimonialResource` for Filament v4.
+- `FilamentTestimonialPlugin` with `TestimonialResource` for Filament v3.
 - Translatable `content` field via `jeffersongoncalves/filament-translatable`.
 - Config-based resource override (`filament-testimonial.resources.testimonial`) and navigation group.
 
-[Unreleased]: https://github.com/jeffersongoncalves/filament-testimonial/commits/2.x
+[Unreleased]: https://github.com/jeffersongoncalves/filament-testimonial/commits/1.x
