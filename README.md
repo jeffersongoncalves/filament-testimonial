@@ -1,14 +1,16 @@
 <div class="filament-hidden">
 
-![Filament Testimonial](https://raw.githubusercontent.com/jeffersongoncalves/filament-testimonial/3.x/art/jeffersongoncalves-filament-testimonial.png)
+![Filament Testimonial](https://raw.githubusercontent.com/jeffersongoncalves/filament-testimonial/1.x/art/jeffersongoncalves-filament-testimonial.png)
 
 </div>
 
 # Filament Testimonial
 
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/jeffersongoncalves)
+
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jeffersongoncalves/filament-testimonial.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-testimonial)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-testimonial/tests.yml?branch=3.x&label=tests&style=flat-square)](https://github.com/jeffersongoncalves/filament-testimonial/actions?query=workflow%3Atests+branch%3A3.x)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-testimonial/pint.yml?branch=3.x&label=code%20style&style=flat-square)](https://github.com/jeffersongoncalves/filament-testimonial/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3A3.x)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-testimonial/tests.yml?branch=1.x&label=tests&style=flat-square)](https://github.com/jeffersongoncalves/filament-testimonial/actions?query=workflow%3Atests+branch%3A1.x)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-testimonial/pint.yml?branch=1.x&label=code%20style&style=flat-square)](https://github.com/jeffersongoncalves/filament-testimonial/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3A1.x)
 [![Total Downloads](https://img.shields.io/packagist/dt/jeffersongoncalves/filament-testimonial.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-testimonial)
 [![License](https://img.shields.io/packagist/l/jeffersongoncalves/filament-testimonial.svg?style=flat-square)](LICENSE)
 
@@ -22,12 +24,14 @@ Filament admin UI (CRUD) for [`jeffersongoncalves/laravel-testimonial`](https://
 | [2.x](https://github.com/jeffersongoncalves/filament-testimonial/tree/2.x) | 4.x |
 | [3.x](https://github.com/jeffersongoncalves/filament-testimonial/tree/3.x) | 5.x |
 
+> **Note (1.x):** pinned to Laravel 12.x. `jeffersongoncalves/laravel-testimonial` requires `illuminate/*: ^12.0|^13.0`, which has no overlap with `orchestra/testbench` releases below `^9.0` (Laravel 11). Filament v3.3.x already supports Laravel 12, so this branch targets Laravel 12/13 only.
+
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require jeffersongoncalves/filament-testimonial:"^3.0"
+composer require jeffersongoncalves/filament-testimonial:"^1.0"
 ```
 
 Register the plugin in your panel provider:
