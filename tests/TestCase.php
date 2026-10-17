@@ -4,7 +4,6 @@ namespace JeffersonGoncalves\FilamentTestimonial\Tests;
 
 use BladeUI\Heroicons\BladeHeroiconsServiceProvider;
 use BladeUI\Icons\BladeIconsServiceProvider;
-use Composer\InstalledVersions;
 use Filament\Actions\ActionsServiceProvider;
 use Filament\Facades\Filament;
 use Filament\FilamentServiceProvider;
@@ -22,6 +21,7 @@ use JeffersonGoncalves\FilamentTestimonial\FilamentTestimonialServiceProvider;
 use JeffersonGoncalves\FilamentTestimonial\Tests\Fixtures\TestPanelProvider;
 use JeffersonGoncalves\FilamentTestimonial\Tests\Fixtures\TestUser;
 use JeffersonGoncalves\FilamentTranslatable\FilamentTranslatableServiceProvider;
+use JeffersonGoncalves\PestPluginDatabaseMigrations\LoadsPackageMigrations;
 use JeffersonGoncalves\Testimonial\TestimonialServiceProvider;
 use Livewire\LivewireServiceProvider;
 use Livewire\Mechanisms\DataStore;
@@ -30,6 +30,7 @@ use RyanChandler\BladeCaptureDirective\BladeCaptureDirectiveServiceProvider;
 
 abstract class TestCase extends BaseTestCase
 {
+    use LoadsPackageMigrations;
     use RefreshDatabase;
 
     protected function setUp(): void
@@ -93,9 +94,7 @@ abstract class TestCase extends BaseTestCase
             $table->rememberToken();
         });
 
-        $this->loadTestimonialVendorMigrations([
-            'create_testimonials_table',
-        ]);
+        $this->loadPackageMigrations(TestimonialServiceProvider::class);
     }
 
     /**
@@ -113,42 +112,5 @@ abstract class TestCase extends BaseTestCase
         }
 
         $this->app->singleton(DataStore::class, DataStoreOverride::class);
-    }
-
-    /**
-     * Copy the vendored `*.php.stub` migrations for `jeffersongoncalves/laravel-testimonial`
-     * into a temp directory, each prefixed with a `%04d_` counter so
-     * loadMigrationsFrom's filename sort preserves the foreign-key-safe order
-     * supplied by the caller.
-     *
-     * @param  list<string>  $migrations  ordered migration stub names
-     */
-    protected function loadTestimonialVendorMigrations(array $migrations): void
-    {
-        $tempPath = sys_get_temp_dir().'/filament-testimonial-vendor-migrations';
-
-        if (is_dir($tempPath)) {
-            array_map('unlink', (array) glob($tempPath.'/*.php'));
-        } else {
-            mkdir($tempPath, 0755, true);
-        }
-
-        $base = InstalledVersions::getInstallPath('jeffersongoncalves/laravel-testimonial');
-
-        if ($base === null) {
-            return;
-        }
-
-        $migrationsPath = $base.'/database/migrations';
-
-        foreach ($migrations as $index => $name) {
-            $stub = $migrationsPath.'/'.$name.'.php.stub';
-
-            if (file_exists($stub)) {
-                copy($stub, sprintf('%s/%04d_%s.php', $tempPath, $index, $name));
-            }
-        }
-
-        $this->loadMigrationsFrom($tempPath);
     }
 }
